@@ -9,6 +9,8 @@ export const createAccount = async (app: FastifyInstance) => {
     '/users',
     {
       schema: {
+        tags: ['Auth'],
+        summary: 'Create account',
         body: z.object({
           name: z.string(),
           email: z.string().email(),
@@ -31,6 +33,15 @@ export const createAccount = async (app: FastifyInstance) => {
         })
       }
 
+      const [, domain] = email.split('@')
+
+      const autoJoinOrganization = await prisma.organization.findFirst({
+        where: {
+          domain,
+          shouldAttachUserByDomain: true,
+        },
+      })
+
       const hashedPassword = await hash(password, 6)
 
       await prisma.user.create({
@@ -38,6 +49,13 @@ export const createAccount = async (app: FastifyInstance) => {
           name,
           email,
           password: hashedPassword,
+          member_on: autoJoinOrganization
+            ? {
+                create: {
+                  organizationId: autoJoinOrganization.id,
+                },
+              }
+            : undefined,
         },
       })
 
