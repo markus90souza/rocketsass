@@ -2,5 +2,13 @@
   "extends": "@rocketsass/typescript-config/node",
   "include": [
     "src/**/*"
-  ]
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
+  }
 }
