@@ -4,7 +4,7 @@ import type { ZodTypeProvider } from 'fastify-type-provider-zod'
 import { z } from 'zod'
 
 import { prisma } from '@/lib/prisma'
-export const createAccount = async (app: FastifyInstance) => {
+export async function createAccount(app: FastifyInstance) {
   app.withTypeProvider<ZodTypeProvider>().post(
     '/users',
     {
