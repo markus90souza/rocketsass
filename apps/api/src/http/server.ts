@@ -10,13 +10,15 @@ import {
   ZodTypeProvider,
 } from 'fastify-type-provider-zod'
 
+import { errorHandler } from './error-handler'
 import { authenticateWithCredentials } from './routes/auth/authenticate-with-credentials'
 import { createAccount } from './routes/auth/create-account'
+import { getProfile } from './routes/auth/get-profile'
 
 const app = fastify().withTypeProvider<ZodTypeProvider>()
 app.setSerializerCompiler(serializerCompiler)
 app.setValidatorCompiler(validatorCompiler)
-
+app.setErrorHandler(errorHandler)
 app.register(fastifySwagger, {
   openapi: {
     info: {
@@ -34,8 +36,11 @@ app.register(fastifyJwt, {
   secret: 'rocket-sass',
 })
 app.register(fastifyCors)
+
+// AUTH
 app.register(createAccount)
 app.register(authenticateWithCredentials)
+app.register(getProfile)
 
 app.listen({ port: 3333 }).then(() => {
   console.log('HTTP server running on http://localhost:3333')
