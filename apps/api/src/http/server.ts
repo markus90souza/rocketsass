@@ -12,6 +12,7 @@ import {
 
 import { errorHandler } from './error-handler'
 import { authenticateWithCredentials } from './routes/auth/authenticate-with-credentials'
+import { authenticateWithGithub } from './routes/auth/authenticate-with-github'
 import { createAccount } from './routes/auth/create-account'
 import { getProfile } from './routes/auth/get-profile'
 import { requestPasswordRecover } from './routes/auth/request-password-recover'
@@ -43,6 +44,7 @@ app.register(fastifyCors)
 // AUTH
 app.register(createAccount)
 app.register(authenticateWithCredentials)
+app.register(authenticateWithGithub)
 app.register(getProfile)
 app.register(requestPasswordRecover)
 app.register(resetPassword)

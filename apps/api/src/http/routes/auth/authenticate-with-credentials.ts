@@ -47,7 +47,7 @@ export async function authenticateWithCredentials(app: FastifyInstance) {
         })
       }
 
-      const isPasswordValid = await compare(password, userFromEmail.password)
+      const isPasswordValid = await compare(password, userFromEmail.password!)
 
       if (!isPasswordValid) {
         return reply.status(400).send({
