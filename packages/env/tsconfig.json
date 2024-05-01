@@ -1,0 +1,6 @@
+{
+  "extends": "@rocketsass/typescript-config/library",
+  "include": [
+    "src/**/*"
+  ]
+}

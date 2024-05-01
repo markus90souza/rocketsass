@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "tsx watch ./src/http/server.ts"
+    "dev": "pnpm env:load tsx watch ./src/http/server.ts",
+    "db:migrate": "pnpm env:load prisma migrate dev",
+    "db:studio": "pnpm env:load prisma studio",
+    "env:load": "dotenv -e ../../.env --"
   },
   "prisma": {
     "seed": "tsx ./prisma/seed.ts"
@@ -23,11 +26,13 @@
     "zod": "^3.23.4"
   },
   "devDependencies": {
+    "@rocketsass/env": "workspace:*",
     "@rocketsass/eslint-config": "workspace:*",
     "@rocketsass/prettier-config": "workspace:*",
     "@rocketsass/typescript-config": "workspace:*",
     "@types/bcryptjs": "^2.4.6",
     "@types/node": "^20.12.7",
+    "dotenv-cli": "^7.4.1",
     "prisma": "^5.13.0",
     "tsx": "^4.7.3"
   },

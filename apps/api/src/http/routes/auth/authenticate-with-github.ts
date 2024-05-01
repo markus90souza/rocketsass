@@ -1,3 +1,4 @@
+import { env } from '@rocketsass/env'
 import type { FastifyInstance } from 'fastify'
 import type { ZodTypeProvider } from 'fastify-type-provider-zod'
 import { z } from 'zod'
@@ -30,19 +31,16 @@ export async function authenticateWithGithub(app: FastifyInstance) {
         `https://github.com/login/oauth/access_token`,
       )
 
-      githubOAuthURL.searchParams.set(
-        'client_id',
-        process.env.GITHUB_CLIENT_ID!,
-      )
+      githubOAuthURL.searchParams.set('client_id', env.GITHUB_OAUTH_CLIENT_ID!)
 
       githubOAuthURL.searchParams.set(
         'client_secret',
-        process.env.GITHUB_CLIENT_SECRET!,
+        env.GITHUB_OAUTH_CLIENT_SECRET!,
       )
 
       githubOAuthURL.searchParams.set(
         'redirect_uri',
-        process.env.GITHUB_REDIRECT_URI!,
+        env.GITHUB_OAUTH_CLIENT_REDIRECT_URI!,
       )
 
       githubOAuthURL.searchParams.set('code', code)
