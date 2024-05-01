@@ -7,7 +7,7 @@ import { prisma } from '@/lib/prisma'
 
 export async function authenticateWithCredentials(app: FastifyInstance) {
   app.withTypeProvider<ZodTypeProvider>().post(
-    '/sessions/credentials',
+    '/session/credentials',
     {
       schema: {
         tags: ['Auth'],

@@ -31,11 +31,11 @@ app.register(fastifySwagger, {
   transform: jsonSchemaTransform,
 })
 
+app.register(fastifyCors)
 app.register(fastifySwaggerUI, { routePrefix: '/docs' })
 app.register(fastifyJwt, {
   secret: 'rocket-sass',
 })
-app.register(fastifyCors)
 
 // AUTH
 app.register(createAccount)
