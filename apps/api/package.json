@@ -9,7 +9,7 @@
     "env:load": "dotenv -e ../../.env --"
   },
   "prisma": {
-    "seed": "tsx ./prisma/seed.ts"
+    "seed": "pnpm env:load tsx ./prisma/seed.ts"
   },
   "dependencies": {
     "@faker-js/faker": "^8.4.1",
