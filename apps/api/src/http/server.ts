@@ -23,6 +23,7 @@ import { deleteOrganization } from './routes/orgs/delete-organization'
 import { getMembership } from './routes/orgs/get-membership'
 import { getOrganization } from './routes/orgs/get-organization'
 import { getOrganizations } from './routes/orgs/get-organizations'
+import { transferOrganization } from './routes/orgs/transfer-organization'
 import { updateOrganization } from './routes/orgs/update-organization'
 
 const app = fastify().withTypeProvider<ZodTypeProvider>()
@@ -69,6 +70,7 @@ app.register(getOrganizations)
 app.register(getOrganization)
 app.register(updateOrganization)
 app.register(deleteOrganization)
+app.register(transferOrganization)
 app.register(getMembership)
 
 app.listen({ port: env.SERVER_PORT }).then(() => {
