@@ -110,8 +110,8 @@ model Project {
   name           String
   description    String
   slug           String       @unique
-  avatarUrl      String       @map("avatar_url")
   owner          User         @relation(fields: [ownerId], references: [id])
+  avatarUrl      String?      @map("avatar_url")
   ownerId        String       @map("owner_id")
   organization   Organization @relation(fields: [organizationId], references: [id])
   organizationId String       @map("organization_id")
