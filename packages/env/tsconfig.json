@@ -1,5 +1,5 @@
 {
-  "extends": "@rocketsass/typescript-config/library",
+  "extends": "@zeronze/typescript-config/library",
   "include": [
     "src/**/*"
   ]

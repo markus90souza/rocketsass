@@ -1,8 +1,9 @@
 {
-  "name": "@rocketsass/typescript-config",
+  "name": "@zeronze/typescript-config",
   "version": "0.0.0",
   "private": true,
   "files": [
+    "nextjs.json",
     "library.json",
     "node.json"
   ]

@@ -1,20 +1,20 @@
 {
-  "name": "@rocketsass/auth",
+  "name": "@zeronze/auth",
   "version": "0.0.0",
   "private": true,
   "main": "src/index.ts",
   "types": "src/index.ts",
   "devDependencies": {
-    "@rocketsass/eslint-config": "workspace:*",
-    "@rocketsass/prettier-config": "workspace:*",
-    "@rocketsass/typescript-config": "workspace:*"
+    "@zeronze/eslint-config": "workspace:*",
+    "@zeronze/prettier-config": "workspace:*",
+    "@zeronze/typescript-config": "workspace:*"
   },
   "eslintConfig": {
     "extends": [
-      "@rocketsass/eslint-config/library"
+      "@zeronze/eslint-config/library"
     ]
   },
-  "prettier": "@rocketsass/prettier-config",
+  "prettier": "@zeronze/prettier-config",
   "dependencies": {
     "@casl/ability": "^6.7.1",
     "zod": "^3.23.4"

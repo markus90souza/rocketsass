@@ -1,5 +1,5 @@
 {
-  "name": "@rocketsass/api",
+  "name": "@zeronze/api",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -12,34 +12,34 @@
     "seed": "pnpm env:load tsx ./prisma/seed.ts"
   },
   "dependencies": {
-    "@faker-js/faker": "^8.4.1",
-    "@fastify/cors": "^9.0.1",
-    "@fastify/jwt": "^8.0.0",
-    "@fastify/swagger": "^8.14.0",
-    "@fastify/swagger-ui": "^3.0.0",
-    "@prisma/client": "5.13.0",
-    "@rocketsass/auth": "workspace:*",
+    "@faker-js/faker": "^9.2.0",
+    "@fastify/cors": "^10.0.1",
+    "@fastify/jwt": "^9.0.1",
+    "@fastify/swagger": "^9.2.0",
+    "@fastify/swagger-ui": "^5.1.0",
+    "@prisma/client": "5.22.0",
+    "@zeronze/auth": "workspace:*",
+    "@zeronze/env": "workspace:*",
     "bcryptjs": "^2.4.3",
-    "fastify": "^4.26.2",
-    "fastify-plugin": "^4.5.1",
-    "fastify-type-provider-zod": "^1.1.9",
-    "zod": "^3.23.4"
+    "fastify": "^5.1.0",
+    "fastify-plugin": "^5.0.1",
+    "fastify-type-provider-zod": "^4.0.2",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@rocketsass/env": "workspace:*",
-    "@rocketsass/eslint-config": "workspace:*",
-    "@rocketsass/prettier-config": "workspace:*",
-    "@rocketsass/typescript-config": "workspace:*",
     "@types/bcryptjs": "^2.4.6",
-    "@types/node": "^20.12.7",
-    "dotenv-cli": "^7.4.1",
-    "prisma": "^5.13.0",
-    "tsx": "^4.7.3"
+    "@types/node": "^22.9.0",
+    "@zeronze/eslint-config": "workspace:*",
+    "@zeronze/prettier-config": "workspace:*",
+    "@zeronze/typescript-config": "workspace:*",
+    "dotenv-cli": "^7.4.2",
+    "prisma": "^5.22.0",
+    "tsx": "^4.19.2"
   },
   "eslintConfig": {
     "extends": [
-      "@rocketsass/eslint-config/node"
+      "@zeronze/eslint-config/node"
     ]
   },
-  "prettier": "@rocketsass/prettier-config"
+  "prettier": "@zeronze/prettier-config"
 }

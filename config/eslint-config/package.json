@@ -1,5 +1,5 @@
 {
-  "name": "@rocketsass/eslint-config",
+  "name": "@zeronze/eslint-config",
   "version": "0.0.0",
   "private": true,
   "files": [
@@ -10,9 +10,9 @@
   "devDependencies": {
     "@rocketseat/eslint-config": "^2.2.2",
     "eslint-plugin-simple-import-sort": "^12.1.0",
-    "@rocketsass/prettier-config": "workspace:*"
+    "@zeronze/prettier-config": "workspace:*"
   },
-  "prettier": "@rocketsass/prettier-config",
+  "prettier": "@zeronze/prettier-config",
   "eslintConfig": {
     "extends": [
       "./library.js"

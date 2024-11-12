@@ -1,5 +1,5 @@
 {
-  "name": "@rocketsass/prettier-config",
+  "name": "@zeronze/prettier-config",
   "version": "0.0.0",
   "main": "index.mjs",
   "private": true,

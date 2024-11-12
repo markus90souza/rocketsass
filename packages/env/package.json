@@ -1,21 +1,21 @@
 {
-  "name": "@rocketsass/env",
+  "name": "@zeronze/env",
   "version": "0.0.0",
   "private": true,
   "main": "src/index.ts",
   "types": "src/index.ts",
   "devDependencies": {
-    "@rocketsass/eslint-config": "workspace:*",
-    "@rocketsass/prettier-config": "workspace:*",
-    "@rocketsass/typescript-config": "workspace:*",
+    "@zeronze/eslint-config": "workspace:*",
+    "@zeronze/prettier-config": "workspace:*",
+    "@zeronze/typescript-config": "workspace:*",
     "@types/node": "^20.12.7"
   },
   "eslintConfig": {
     "extends": [
-      "@rocketsass/eslint-config/library"
+      "@zeronze/eslint-config/library"
     ]
   },
-  "prettier": "@rocketsass/prettier-config",
+  "prettier": "@zeronze/prettier-config",
   "dependencies": {
     "@t3-oss/env-nextjs": "^0.10.1",
     "zod": "^3.23.4"

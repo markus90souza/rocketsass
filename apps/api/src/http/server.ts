@@ -2,7 +2,7 @@ import fastifyCors from '@fastify/cors'
 import fastifyJwt from '@fastify/jwt'
 import fastifySwagger from '@fastify/swagger'
 import fastifySwaggerUI from '@fastify/swagger-ui'
-import { env } from '@rocketsass/env'
+import { env } from '@zeronze/env'
 import { fastify } from 'fastify'
 import {
   jsonSchemaTransform,
@@ -18,6 +18,9 @@ import { createAccount } from './routes/auth/create-account'
 import { getProfile } from './routes/auth/get-profile'
 import { requestPasswordRecover } from './routes/auth/request-password-recover'
 import { resetPassword } from './routes/auth/reset-password'
+import { createInvite } from './routes/invites/create-invite'
+import { getInvite } from './routes/invites/get-invite'
+import { getAllOrganizationInvites } from './routes/invites/get-invites'
 import { getMembers } from './routes/members/get-members'
 import { removeMember } from './routes/members/remove-member'
 import { updateMember } from './routes/members/update-member'
@@ -90,6 +93,10 @@ app.register(updateProject)
 app.register(getMembers)
 app.register(updateMember)
 app.register(removeMember)
+// INVITES
+app.register(createInvite)
+app.register(getInvite)
+app.register(getAllOrganizationInvites)
 
 app.listen({ port: env.SERVER_PORT }).then(() => {
   console.log('HTTP server running on http://localhost:3333')

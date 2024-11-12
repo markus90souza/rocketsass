@@ -1,5 +1,5 @@
 {
-  "extends": "@rocketsass/typescript-config/node",
+  "extends": "@zeronze/typescript-config/node",
   "include": [
     "src/**/*",
     "@types/**/*.d.ts"

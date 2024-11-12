@@ -1,4 +1,4 @@
-import { roleSchema } from '@rocketsass/auth'
+import { roleSchema } from '@zeronze/auth'
 import type { FastifyInstance } from 'fastify'
 import type { ZodTypeProvider } from 'fastify-type-provider-zod'
 import { z } from 'zod'
