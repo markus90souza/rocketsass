@@ -1,6 +1,8 @@
 'use server'
 
 import { HTTPError } from 'ky'
+import { cookies } from 'next/headers'
+import { redirect } from 'next/navigation'
 
 import { signInWithCredentials } from '@/http/auth/signin-with-credentials'
 
@@ -27,6 +29,11 @@ export const onSignInWithCredentials = async (data: FormData) => {
       password: String(password),
     })
 
+    cookies().set('token', token, {
+      maxAge: 60 * 60 * 24 * 7, // 7 day
+      path: '/',
+    })
+
     console.log(token)
   } catch (error) {
     if (error instanceof HTTPError) {
@@ -48,9 +55,5 @@ export const onSignInWithCredentials = async (data: FormData) => {
     }
   }
 
-  return {
-    success: true,
-    message: null,
-    errors: null,
-  }
+  redirect('/')
 }
