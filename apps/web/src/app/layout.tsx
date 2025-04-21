@@ -14,7 +14,7 @@ type RootLayoutProps = {
 
 const RootLayout: FC<RootLayoutProps> = ({ children }) => {
   return (
-    <html lang="pt-br" className="dark">
+    <html lang="pt-br" className="dark" suppressHydrationWarning>
       <body className={``}>{children}</body>
     </html>
   )

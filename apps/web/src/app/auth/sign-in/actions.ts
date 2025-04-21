@@ -4,7 +4,7 @@ import { HTTPError } from 'ky'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
-import { signInWithCredentials } from '@/http/auth/signin-with-credentials'
+import { signInWithCredentials } from '@/http/auth/sign-in-with-credentials'
 
 import { signInFormSchema } from './types'
 
@@ -29,7 +29,9 @@ export const onSignInWithCredentials = async (data: FormData) => {
       password: String(password),
     })
 
-    cookies().set('token', token, {
+    const _cookies =  await cookies()
+
+    _cookies.set('token', token, {
       maxAge: 60 * 60 * 24 * 7, // 7 day
       path: '/',
     })
@@ -57,3 +59,4 @@ export const onSignInWithCredentials = async (data: FormData) => {
 
   redirect('/')
 }
+

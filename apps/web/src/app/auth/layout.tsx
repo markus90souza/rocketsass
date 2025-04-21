@@ -6,9 +6,9 @@ type AuthLayoutProps = {
   children: ReactNode
 }
 
-const AuthLayout: FC<AuthLayoutProps> = ({ children }) => {
-  if (isAuthenticated()) {
-    redirect('/')
+const AuthLayout: FC<AuthLayoutProps> = async ({ children }) => {
+  if (await isAuthenticated()) {
+    redirect('/'                                                                                                                                                                                                                                                                                            )
   }
   return (
     <div className="flex min-h-screen flex-col items-center justify-center px-4">
