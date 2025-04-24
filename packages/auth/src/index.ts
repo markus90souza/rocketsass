@@ -34,7 +34,7 @@ type AppAbilities = z.infer<typeof appAbilitySchema>
 export type AppAbility = MongoAbility<AppAbilities>
 export const createAppAbility = createMongoAbility as CreateAbility<AppAbility>
 
-export const defineAbilityFor = (user: User) => {
+export const defineAbilityFor =    (user: User) => {
   const builder = new AbilityBuilder(createAppAbility)
 
   if (typeof permissions[user.role] !== 'function') {

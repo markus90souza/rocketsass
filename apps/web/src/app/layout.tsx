@@ -1,3 +1,4 @@
+import { ThemeProvider } from '@/components/theme/theme-provider'
 import '@/styles/globals.css'
 
 import type { Metadata } from 'next'
@@ -14,8 +15,16 @@ type RootLayoutProps = {
 
 const RootLayout: FC<RootLayoutProps> = ({ children }) => {
   return (
-    <html lang="pt-br" className="dark" suppressHydrationWarning>
-      <body className={``}>{children}</body>
+    <html lang="pt-BR"  suppressHydrationWarning>
+      <body className={``}>
+        
+        <ThemeProvider attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   )
 }
